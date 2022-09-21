@@ -10,7 +10,7 @@ import javax.validation.constraints.*;
 public class Drone {
     @Id
     @NotBlank(message = "Serial Number Required!")
-    @Column(name = "serial-number")
+    @Column(name = "serial-number", length = 100)
     private String serialNumber;
     @NotBlank(message = "Model is Required!")
     @Column(name = "model")
@@ -20,7 +20,7 @@ public class Drone {
     @Column(name = "weight")
     private BigInteger weight;// weight limit 500grams max
     @NotBlank(message = "battery Capacity Number Required!")
-    @Column(name = "battery-capacity")
+    @Column(name = "battery-capacity", precision = 5, scale = 2)
     private DecimalFormat batteryCapacity;
     @Column(name = "state")
     @NotNull(message = "state Required!")

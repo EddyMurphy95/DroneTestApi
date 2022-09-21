@@ -1,10 +1,13 @@
 package com.drone.api.dronetestapi.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 
 public class Medication {
     @Id
+    @Pattern(regexp = "^[0-9A-Z_]*$", message = "Input not allowed")
     private String code;
+    @Pattern(regexp = "^[0-9a-zA-Z_]*$", message = "name accepts only alphanumeric values")
     private String name;
     private double weight;
     private String image;
