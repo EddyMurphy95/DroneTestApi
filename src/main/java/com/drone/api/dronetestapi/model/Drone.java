@@ -76,4 +76,16 @@ public class Drone {
     public void setState(String state) {
         this.state = state;
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+                " serialNumber='" + getSerialNumber() + "'" +
+                ", model='" + getModel() + "'" +
+                ", weight='" + getWeight() + "'" +
+                ", batteryCapacity='" + getBatteryCapacity() + "'" +
+                ", state='" + getState() + "'" +
+                "}";
+    }
+
 }
