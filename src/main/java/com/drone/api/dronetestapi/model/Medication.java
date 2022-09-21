@@ -1,15 +1,20 @@
 package com.drone.api.dronetestapi.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
 public class Medication {
     @Id
     @Pattern(regexp = "^[0-9A-Z_]*$", message = "Input not allowed")
+    @NotBlank(message = "code cannot be blank")
     private String code;
     @Pattern(regexp = "^[0-9a-zA-Z_]*$", message = "name accepts only alphanumeric values")
+    @NotBlank(message = "name cannot be blank")
     private String name;
+    @NotBlank(message = "weight cannot be blank")
     private double weight;
+    @NotBlank(message = "image cannot be blank")
     private String image;
 
     public Medication() {
